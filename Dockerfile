@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:3.12
+FROM arm32v8/alpine:3.12
 
 LABEL maintainer="Peter Dave Hello <hsu@peterdavehello.org>"
 LABEL name="tor-socks-proxy"
