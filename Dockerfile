@@ -1,4 +1,4 @@
-FROM arm32v7/alpine:3.12
+FROM resnullius/alpine-armv7l:latest
 
 LABEL maintainer="Peter Dave Hello <hsu@peterdavehello.org>"
 LABEL name="tor-socks-proxy"
