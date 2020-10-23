@@ -1,4 +1,4 @@
-FROM resnullius/alpine-armv7l:latest
+FROM balenalib/raspberrypi3-alpine:latest
 
 LABEL maintainer="Peter Dave Hello <hsu@peterdavehello.org>"
 LABEL name="tor-socks-proxy"
