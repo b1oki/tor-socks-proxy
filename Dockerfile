@@ -6,7 +6,7 @@ LABEL version="latest"
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
 RUN apk -U upgrade
-RUN apk -v add tor@edge curl
+RUN apk -v add tor curl
 RUN chmod 700 /var/lib/tor
 RUN rm -rf /var/cache/apk/*
 RUN tor --version
