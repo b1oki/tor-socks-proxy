@@ -4,6 +4,7 @@ LABEL maintainer="Peter Dave Hello <hsu@peterdavehello.org>"
 LABEL name="tor-socks-proxy"
 LABEL version="latest"
 
+RUN /bin/sh -c apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing obfs4proxy
 RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/testing'   >> /etc/apk/repositories && \
     apk -U upgrade && \
