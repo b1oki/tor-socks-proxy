@@ -3,7 +3,7 @@ Log notice stdout
 DNSPort 0.0.0.0:8853
 SocksPort 0.0.0.0:9150
 DataDirectory /var/lib/tor
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+#ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec /usr/bin/obfs4proxy
 Bridge obfs4 20.250.20.123:443 E01BFE6EDAA3FCFAC9657D38EFC261A83D767714 cert=Fpg9vb0kePXAMNjYJ9IIuneBFZncaR6hocMAm+WHUoulrLv9+jkZHipD6O4wNuiuB7O3Rw iat-mode=0
 Bridge obfs4 80.85.143.187:1090 58CDADCE1EA61D5906C0909BF9F010CD61A606B4 cert=LU9MkdW+dIYfQihT3odvWlmQ/WkfbRAn+wwf2go9uj2t2Pge8SGZDqwvJ62aHhUExr6NJg iat-mode=0
 Bridge obfs4 51.68.156.206:55750 696045308BACFBFC2B6D9D0B6B926738B1FCFC3E cert=KCVLtRuVqwOkiuSqzm/qGGRjS06VumeD2NAn12UqmWykRIkuwwVtc9Ru0TryU/1v/X48Jg iat-mode=0
