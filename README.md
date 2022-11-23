@@ -105,6 +105,16 @@ Set the DNS server to `127.0.0.1` (Or another IP you set), use [macvk/dnsleaktes
 - IP Leak Tests: <https://ipleak.org/>
 - IP/DNS Detect: <https://ipleak.net/>
 
+
+## Raspberry Pi 3b+ (32-bit)
+
+```
+docker build --no-cache https://github.com/b1oki/tor-socks-proxy.git#arm -t tor-socks-proxy:local-arm32v7
+docker run -d --restart=always --name tor-socks-proxy -p 0.0.0.0:9100:9150 tor-socks-proxy:local-arm32v7
+sudo ufw allow 9100/tcp
+```
+
+
 ## Note
 
 **For the Tor project sustainability, I strongly encourage you to help [setup Tor bridge/exit nodes](https://trac.torproject.org/projects/tor/wiki/TorRelayGuide)([**script**](https://github.com/PeterDaveHello/ubuntu-tor-simply-setup)) and [donate](https://donate.torproject.org/) money to the Tor project *(Not this proxy project)* when you have the ability/capacity!**
