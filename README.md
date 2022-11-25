@@ -105,6 +105,25 @@ Set the DNS server to `127.0.0.1` (Or another IP you set), use [macvk/dnsleaktes
 - IP Leak Tests: <https://ipleak.org/>
 - IP/DNS Detect: <https://ipleak.net/>
 
+## Bridges
+
+Get bridges from
+- https://bridges.torproject.org/bridges/?transport=obfs4
+- https://torscan-ru.ntc.party/
+- https://t.me/GetBridgesBot
+
+Put lines into file `bridges.txt` in torrc format `Bridge obfs4 %adress%:%port% %fingerprint% cert=%cert% iat-mode=%mode%`
+
+Pass file to container with parameter `-v $(pwd)/bridges.txt:/home/bridges.txt`
+
+Add bridges to Tor config with custom command `sh -c "cat /home/bridges.txt >> /etc/tor/torrc; /usr/bin/tor -f /etc/tor/torrc"`
+
+Example setup command:
+
+```sh
+docker run -d --restart=always --name tor-socks-proxy -p 0.0.0.0:9100:9150 -v $(pwd)/bridges.txt:/home/bridges.txt tor-socks-proxy sh -c "cat /home/bridges.txt >> /etc/tor/torrc; /usr/bin/tor -f /etc/tor/torrc"
+```
+
 ## Note
 
 **For the Tor project sustainability, I strongly encourage you to help [setup Tor bridge/exit nodes](https://trac.torproject.org/projects/tor/wiki/TorRelayGuide)([**script**](https://github.com/PeterDaveHello/ubuntu-tor-simply-setup)) and [donate](https://donate.torproject.org/) money to the Tor project *(Not this proxy project)* when you have the ability/capacity!**
